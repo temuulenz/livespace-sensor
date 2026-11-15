@@ -1,0 +1,8 @@
+{
+  "hostEpoch": 1794778514.2360773,
+  "activeCameraClientsEmpty": true,
+  "sensorWakeLockAbsent": true,
+  "serviceStartRequestedFalse": true,
+  "latestStructuredSample": "I/LiveSpaceIntegration( 1422): SAMPLE utc=1794778512195 elapsed=24917009 interactive=false pssKiB=49024 running=false camera=0 inference=0 failedInference=0 people=null inferenceMs=null rms=null dbfs=null mic=Stopped temperature=34.8 charging=true network=DISCONNECTED sent=0 ack=0 pending=0 delivered=114 retry=7 expired=0 dropped=8 rejected=1 lastAck=null error=null sensorError=null",
+  "microphoneReleaseObserved": true
+}

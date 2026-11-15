@@ -1,0 +1,42 @@
+{
+  "monitorFile": "docs/evidence/phase7/screen-off-1794778699.jsonl",
+  "startEpoch": 1794778702.4934778,
+  "endEpoch": 1794779002.5083458,
+  "screenOffWindowSeconds": 300.651,
+  "observedSeconds": 300.015,
+  "monitorSamples": 11,
+  "structuredSamples": 35,
+  "allMonitorDisplayOff": true,
+  "allStructuredNonInteractive": true,
+  "allStructuredRunning": true,
+  "allStructuredConnected": true,
+  "allStructuredMicrophoneRunning": true,
+  "cameraFrameDelta": 8376.0,
+  "inferenceDelta": 98.0,
+  "ackDelta": 20.0,
+  "sentDelta": 20.0,
+  "failedInferenceDelta": 0.0,
+  "pendingAtStart": 0.0,
+  "pendingAtEnd": 0.0,
+  "temperatureMinC": 33.3,
+  "temperatureMaxC": 33.7,
+  "inferenceMs": {
+    "minimum": 132.059834,
+    "median": 175.2415,
+    "maximum": 260.421625
+  },
+  "pssKiB": {
+    "minimum": 48046,
+    "maximum": 56275
+  },
+  "dbfs": {
+    "minimum": -75.71131495615649,
+    "maximum": -59.94249020887437
+  },
+  "counterDeltas": {
+    "retry": 0.0,
+    "expired": 0.0,
+    "dropped": 0.0,
+    "rejected": 0.0
+  }
+}
