@@ -19,5 +19,5 @@
 <Button android:id="@+id/networkSettings" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Server and credentials"/>
 <Button android:id="@+id/settings" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Settings"/>
 <Button android:id="@+id/diagnostics" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Diagnostics"/>
-<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Local person detection • Observed people ≠ total cafe occupancy. No recordings or transmissions. Camera and microphone stop when this screen leaves the foreground." android:textSize="13sp" android:paddingTop="8dp"/>
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Local analysis • Observed people ≠ total cafe occupancy. No raw images or audio are saved or sent. Only structured telemetry is transmitted when connected. The user-started service continues with the screen off; Stop releases camera and microphone." android:textSize="13sp" android:paddingTop="8dp"/>
 </LinearLayout></ScrollView>

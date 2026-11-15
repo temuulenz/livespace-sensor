@@ -53,3 +53,7 @@ Tokens are AES-GCM encrypted with an API 23 AndroidKeyStore key; only ciphertext
 # Phase 6 durable outbox
 
 `SensorWebSocket` uses the shared `SqliteTelemetryOutbox` in app-private `sensor_outbox.db`. The queue records only immutable protocol-v1 JSON, original message ID/time and identity scope. Rows are inserted before send and removed after matching `accepted`/`duplicate` ACKs only. `sensor.ready` gates replay and device/location are checked for both readiness and each selected row. The default limits are 10,000 messages and 24 hours; settings can reduce either. Queue retention/overflow/rejection counters persist. Backlog is bounded to four in flight, sent at one per second, and fresh live data takes priority over older backlog. It never stores raw media. See [PHASE6_REPORT.md](PHASE6_REPORT.md) and [SENSOR_PROTOCOL.md](SENSOR_PROTOCOL.md).
+
+## Phase 7 API 23 production TLS compatibility
+
+The Note 4 lacks ISRG system trust anchors. Production WSS now uses app-bundled, fingerprint-verified ISRG Root X1 through platform path validation only on API 23 and the exact production endpoint; default hostname checks remain enabled. Other endpoints/newer Android retain system TLS defaults. Physical trust-anchor failure, corrected TLS 1.2, negative certificate/hostname checks, authenticated ready/accepted ACKs and public real-source updates were verified. See [PHASE7_TLS_COMPATIBILITY.md](PHASE7_TLS_COMPATIBILITY.md) for provenance, implementation, tests, evidence and remaining Phase 7 checks.

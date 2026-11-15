@@ -57,7 +57,7 @@ class SensorProtocolV1 : SensorWireProtocol {
             "sensor.ack" -> {
                 val id = root.optString("messageId")
                 val accepted = root.optString("status") in setOf("accepted", "duplicate")
-                if (accepted && id.isNotBlank()) ServerEvent.Acknowledged(id) else ServerEvent.Ignore
+                if (accepted && id.isNotBlank()) ServerEvent.Acknowledged(id,root.optString("status")) else ServerEvent.Ignore
             }
             "sensor.error" -> {
                 val id = root.optString("messageId").takeIf { it.isNotBlank() }

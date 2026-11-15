@@ -14,7 +14,7 @@ interface SensorWireProtocol {
 }
 sealed class ServerEvent {
     data class Ready(val deviceId: String,val locationId: String,val dataSource: String,val maxPayloadBytes: Int): ServerEvent()
-    data class Acknowledged(val id: String): ServerEvent()
+    data class Acknowledged(val id: String,val status: String="accepted"): ServerEvent()
     data class ProtocolError(val id: String?,val code: String): ServerEvent()
     object Ignore: ServerEvent()
 }
@@ -27,7 +27,9 @@ data class ConnectionStatus(val state: ConnectionState=ConnectionState.DISCONNEC
 class SensorWebSocket(private val snapshot: ()->SensorSnapshot,private val uptime: ()->Long,
     private val protocol: SensorWireProtocol=SensorProtocolV1(),private val changed: (ConnectionStatus)->Unit={},
     private val queue:TelemetryOutbox=PendingMessages(), private val heartbeatIntervalMs:Long=HEARTBEAT_INTERVAL_MS,
-    private val tickIntervalMs:Long=1000L) : AutoCloseable {
+    private val tickIntervalMs:Long=1000L,
+    private val endpointClient:(String,OkHttpClient)->OkHttpClient={ _,base -> base },
+    private val diagnostic:(String)->Unit={}) : AutoCloseable {
     private val worker=Executors.newSingleThreadScheduledExecutor()
     // RFC 6455 control pings are transport-level only. OkHttp handles received pings/pongs and
     // fails the socket if a peer does not answer our ping; onFailure enters normal reconnect flow.
@@ -64,7 +66,7 @@ class SensorWebSocket(private val snapshot: ()->SensorSnapshot,private val uptim
         generation++;val owner=generation
         publish(status.copy(state=ConnectionState.CONNECTING,error=null))
         try {
-            socket=client.newWebSocket(Request.Builder().url(c.endpoint).header("Authorization","Bearer $secret").build(),object: WebSocketListener() {
+            socket=endpointClient(c.endpoint,client).newWebSocket(Request.Builder().url(c.endpoint).header("Authorization","Bearer $secret").build(),object: WebSocketListener() {
                 override fun onOpen(ws: WebSocket,response: Response) { dispatch {
                     if(owner!=generation || !desired) { ws.cancel();return@dispatch }
                     val exhausted=queue.reconnect();lastSample=Long.MIN_VALUE
@@ -87,9 +89,13 @@ class SensorWebSocket(private val snapshot: ()->SensorSnapshot,private val uptim
                             } else {
                                 protocolReady=true;maxPayloadBytes=event.maxPayloadBytes;lastSample=Long.MIN_VALUE;failures=0;queue.prioritizeBacklog()
                                 publish(status.copy(error=null))
+                                diagnostic("READY_MATCHED device=${c.deviceId} location=${c.locationId} source=real")
                             }
                         }
-                        is ServerEvent.Acknowledged -> if(protocolReady && queue.acknowledge(event.id,config?.deviceId.orEmpty(),config?.locationId.orEmpty())) publish(status.copy(acknowledged=status.acknowledged+1,lastAcknowledged=System.currentTimeMillis(),error=null))
+                        is ServerEvent.Acknowledged -> if(protocolReady && queue.acknowledge(event.id,config?.deviceId.orEmpty(),config?.locationId.orEmpty())) {
+                            publish(status.copy(acknowledged=status.acknowledged+1,lastAcknowledged=System.currentTimeMillis(),error=null))
+                            diagnostic("ACK_${if(event.status=="duplicate") "DUPLICATE" else "ACCEPTED"} id=${event.id} pending=${status.pending}")
+                        }
                         is ServerEvent.ProtocolError -> {
                             val code=event.code
                             val id=event.id
@@ -162,7 +168,9 @@ class SensorWebSocket(private val snapshot: ()->SensorSnapshot,private val uptim
             for(entry in queue.ready(c.deviceId,c.locationId,1)) {
                 if(entry.json.toByteArray(Charsets.UTF_8).size>maxPayloadBytes) { queue.reject(entry.id);publish(status.copy(failed=status.failed+1,error="Queued telemetry exceeds server payload limit"));continue }
                 if(socket?.send(entry.json)!=true) { queue.reconnect();lost("WebSocket send buffer unavailable",false);break }
-                queue.sent(entry,System.currentTimeMillis());lastQueueSend=now;publish(status.copy(sent=status.sent+1,lastTransmitted=System.currentTimeMillis()));break
+                queue.sent(entry,System.currentTimeMillis());lastQueueSend=now
+                diagnostic("SEND id=${entry.id} sha256=${java.security.MessageDigest.getInstance("SHA-256").digest(entry.json.toByteArray(Charsets.UTF_8)).joinToString("") { "%02x".format(it.toInt() and 255) }}")
+                publish(status.copy(sent=status.sent+1,lastTransmitted=System.currentTimeMillis()));break
             }
         } catch (_: Exception) { publish(status.copy(error="Telemetry encoding failed")) }
     }

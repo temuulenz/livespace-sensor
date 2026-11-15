@@ -51,7 +51,7 @@ class SensorProtocolV1Test {
     @Test fun readyAckDuplicateAndProtocolErrorFramesAreParsed() {
         val ready=protocol.incoming("""{"type":"sensor.ready","schemaVersion":1,"deviceId":"LS-NOTE4-001","locationId":"I","dataSource":"real","maxPayloadBytes":16384}""") as ServerEvent.Ready
         assertEquals(config.deviceId,ready.deviceId);assertEquals(16384,ready.maxPayloadBytes)
-        for(status in listOf("accepted","duplicate")) assertEquals(ServerEvent.Acknowledged("m1"),protocol.incoming("""{"type":"sensor.ack","messageId":"m1","status":"$status","serverTimestamp":"2026-11-16T00:00:01.000Z"}"""))
+        for(status in listOf("accepted","duplicate")) assertEquals(ServerEvent.Acknowledged("m1",status),protocol.incoming("""{"type":"sensor.ack","messageId":"m1","status":"$status","serverTimestamp":"2026-11-16T00:00:01.000Z"}"""))
         assertEquals(ServerEvent.Ignore,protocol.incoming("""{"type":"sensor.ack","messageId":"m1","status":"rejected"}"""))
         assertEquals(ServerEvent.ProtocolError("m2","storage_failed"),protocol.incoming("""{"type":"sensor.error","messageId":"m2","error":{"code":"storage_failed","message":"Unavailable","details":[]}}"""))
         assertEquals(ServerEvent.ProtocolError(null,"invalid_device_token"),protocol.incoming("""{"type":"sensor.error","error":{"code":"invalid_device_token","message":"Denied","details":[]}}"""))
@@ -61,6 +61,7 @@ class SensorProtocolV1Test {
     @Test fun serverReadyGatesTelemetryAndMatchingAckCountsOnce() {
         val server=MockWebServer();val got=CountDownLatch(1);val envelope=AtomicReference<JSONObject>()
         server.enqueue(MockResponse().withWebSocketUpgrade(object: WebSocketListener() {
+            override fun onClosing(webSocket: WebSocket,code:Int,reason:String) { webSocket.close(code,reason) }
             override fun onOpen(webSocket: WebSocket,response: okhttp3.Response) {
                 webSocket.send("""{"type":"sensor.ready","schemaVersion":1,"deviceId":"LS-NOTE4-001","locationId":"I","dataSource":"real","maxPayloadBytes":16384}""")
             }
@@ -85,6 +86,7 @@ class SensorProtocolV1Test {
     @Test fun transientServerErrorRetriesUnchangedMessageIdAndBody() {
         val server=MockWebServer();val attempts=CountDownLatch(2);val first=AtomicReference<String>();val second=AtomicReference<String>()
         server.enqueue(MockResponse().withWebSocketUpgrade(object: WebSocketListener() {
+            override fun onClosing(webSocket: WebSocket,code:Int,reason:String) { webSocket.close(code,reason) }
             var received=0
             override fun onOpen(webSocket: WebSocket,response: okhttp3.Response) { webSocket.send("""{"type":"sensor.ready","schemaVersion":1,"deviceId":"LS-NOTE4-001","locationId":"I","dataSource":"real","maxPayloadBytes":16384}""") }
             override fun onMessage(webSocket: WebSocket,text: String) {

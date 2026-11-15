@@ -33,9 +33,9 @@ class NetworkFoundationTest {
     @Test fun pendingBoundAndInFlightBoundAreIndependent() {
         val q=PendingMessages(2,1)
         assertTrue(q.offer("a","{}"));assertTrue(q.offer("b","{}"));assertFalse(q.offer("c","{}"))
-        q.sent(q.ready().first(),100)
+        val selected=q.ready().first();q.sent(selected,100)
         assertTrue(q.ready().isEmpty());assertEquals(2,q.size)
-        assertTrue(q.acknowledge("a"));assertEquals("b",q.ready().single().id)
+        assertTrue(q.acknowledge(selected.id));assertEquals(if(selected.id=="a") "b" else "a",q.ready().single().id)
     }
     @Test fun outboxKeepsIdentityScopeAndPrioritizesFreshTelemetry() {
         val q=PendingMessages(3,2)
@@ -110,7 +110,8 @@ class NetworkFoundationTest {
     }
     @Test fun temporaryHandshakeFailureReconnectsAndReturnsToConnected() {
         val server=MockWebServer();server.enqueue(MockResponse().setResponseCode(503))
-        server.enqueue(MockResponse().withWebSocketUpgrade(object: WebSocketListener() {}));server.start()
+        server.enqueue(MockResponse().withWebSocketUpgrade(object: WebSocketListener() {
+            override fun onClosing(webSocket: WebSocket,code:Int,reason:String) { webSocket.close(code,reason) }}));server.start()
         val connected=CountDownLatch(1);val states=java.util.concurrent.CopyOnWriteArrayList<ConnectionState>()
         val transport=SensorWebSocket({ TelemetryStore().snapshot(0,0) },{0},changed={ states.add(it.state);if(it.state==ConnectionState.CONNECTED) connected.countDown() })
         try {
@@ -121,7 +122,8 @@ class NetworkFoundationTest {
     }
     @Test fun mockAuthenticatedUpgradeAndDisconnectDoNotInventTelemetry() {
         val server=MockWebServer()
-        server.enqueue(MockResponse().withWebSocketUpgrade(object: WebSocketListener() {}));server.start()
+        server.enqueue(MockResponse().withWebSocketUpgrade(object: WebSocketListener() {
+            override fun onClosing(webSocket: WebSocket,code:Int,reason:String) { webSocket.close(code,reason) }}));server.start()
         val connected=CountDownLatch(1);val disconnected=CountDownLatch(1)
         val transport=SensorWebSocket({ TelemetryStore().snapshot(0,0) },{0},changed={
             if(it.state==ConnectionState.CONNECTED) connected.countDown()

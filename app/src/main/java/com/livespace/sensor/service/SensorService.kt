@@ -112,7 +112,9 @@ class SensorService: Service() {
                 transport?.disconnect();transport?.close()
                 transport=SensorWebSocket({ telemetrySnapshot() },{ if(running) (SystemClock.elapsedRealtime()-startElapsed)/1000 else 0 },changed={ status ->
                     main.post { if(!destroyed) { publish(network=status);updateNotification() } }
-                },queue=outbox)
+                },queue=outbox,endpointClient={ endpoint,base -> ProductionTls.client(applicationContext,endpoint,base) },diagnostic={
+                    if(applicationInfo.flags and android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE != 0) Log.i("LiveSpaceTransport",it)
+                })
                 transport?.connect(config,token);lastError=null;publish()
             }
         } catch(_:Exception) { main.post { lastError="Token missing/unavailable; configure credentials";publish() } } },"LiveSpaceCredentials").start()

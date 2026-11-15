@@ -12,8 +12,9 @@ import com.livespace.sensor.network.TelemetryOutbox
 class SqliteTelemetryOutbox(
     context: Context,
     maxMessages: Int = 10_000,
-    maxAgeMs: Long = 24L * 60 * 60 * 1000
-) : SQLiteOpenHelper(context.applicationContext, "sensor_outbox.db", null, 1), TelemetryOutbox {
+    maxAgeMs: Long = 24L * 60 * 60 * 1000,
+    databaseName: String = "sensor_outbox.db"
+) : SQLiteOpenHelper(context.applicationContext, databaseName, null, 1), TelemetryOutbox {
     @Volatile private var messageLimit=maxMessages
     @Volatile private var retentionMs=maxAgeMs
     @Volatile private var metricsCache=OutboxMetrics()

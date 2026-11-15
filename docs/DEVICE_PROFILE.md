@@ -45,3 +45,7 @@ Independent final running-app dumpsys snapshot: total PSS 92,060 kB (~89.9 MiB),
 AudioRecord physically initialized at 16000 Hz, mono PCM16, VOICE_RECOGNITION source, buffer size 16000 bytes. API 23 nonblocking reads and the unchanged ARMv7 TFLite 2.8.0 model/runtime operated simultaneously. Fallback rates/sources exist but were not needed in normal capture. Controlled AppOps rejection left the microphone uninitialized with a clear error while AI inference continued; restoring the original allow mode restored capture.
 
 Initial Phase 3 battery snapshot: 27%, USB charging flag, 34.4 °C. Complete benchmark sample temperatures and memory are in evidence/phase3/summary.json; Debug.getPss is not the full graphics-inclusive footprint, as established in Phase 2. No SPL reference-meter calibration, CPU-temperature measurement or controlled power-consumption test was performed.
+
+## Phase 7 API 23 production TLS compatibility
+
+The Note 4 lacks ISRG system trust anchors. Production WSS now uses app-bundled, fingerprint-verified ISRG Root X1 through platform path validation only on API 23 and the exact production endpoint; default hostname checks remain enabled. Other endpoints/newer Android retain system TLS defaults. Physical trust-anchor failure, corrected TLS 1.2, negative certificate/hostname checks, authenticated ready/accepted ACKs and public real-source updates were verified. See [PHASE7_TLS_COMPATIBILITY.md](PHASE7_TLS_COMPATIBILITY.md) for provenance, implementation, tests, evidence and remaining Phase 7 checks.
