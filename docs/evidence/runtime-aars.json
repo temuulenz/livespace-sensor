@@ -1,0 +1,28 @@
+[
+  {
+    "version": "2.14.0",
+    "aarSha256": "709db81fbfba461b1ed27e9c1e83817c2d7cc60469074eaa36c88fb8dbea4886",
+    "manifest": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    package=\"org.tensorflow.lite\">\n\n    <!-- TFLite Java Library is built against NDK API 19. -->\n    <uses-sdk\n        android:minSdkVersion=\"19\" />\n\n    <application />\n\n</manifest>\n\n",
+    "armv7Bytes": 2733316,
+    "armv7Sha256": "ecf0f3fbf3ded8c9ac5e68b6a905c95996acccb5737a399f9aad91a7d915e98b",
+    "nativeEntries": [
+      "jni/arm64-v8a/libtensorflowlite_jni.so",
+      "jni/armeabi-v7a/libtensorflowlite_jni.so",
+      "jni/x86/libtensorflowlite_jni.so",
+      "jni/x86_64/libtensorflowlite_jni.so"
+    ]
+  },
+  {
+    "version": "2.8.0",
+    "aarSha256": "cafbaa8329c073a2a4ce0ca74529d8c356638753abbc4401b7739b18fa4ae8bc",
+    "manifest": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    package=\"org.tensorflow.lite\">\n\n    <!-- TFLite Java Library is built against NDK API 19. It may work for Android API levels below\n    19, but is not guaranteed. -->\n    <uses-sdk\n        android:targetSdkVersion=\"19\" />\n\n    <application />\n\n</manifest>\n\n",
+    "armv7Bytes": 2265808,
+    "armv7Sha256": "b34b0fe7d20ef29adacf68886ef6bb402cd0aff905feefe56fe1083ec0c7aefe",
+    "nativeEntries": [
+      "jni/arm64-v8a/libtensorflowlite_jni.so",
+      "jni/armeabi-v7a/libtensorflowlite_jni.so",
+      "jni/x86/libtensorflowlite_jni.so",
+      "jni/x86_64/libtensorflowlite_jni.so"
+    ]
+  }
+]

@@ -1,0 +1,102 @@
+{
+  "sha256": "e4b118e5e4531945de2e659742c7c590f7536f8d0ed26d135abcfe83b4779d13",
+  "schemaVersion": 3,
+  "description": "TOCO Converted.",
+  "inputs": [
+    {
+      "index": 175,
+      "name": "normalized_input_image_tensor",
+      "shape": [
+        1,
+        300,
+        300,
+        3
+      ],
+      "type": 3,
+      "scales": [
+        0.0078125
+      ],
+      "zeroPoints": [
+        128
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "index": 167,
+      "name": "TFLite_Detection_PostProcess",
+      "shape": [],
+      "type": 0,
+      "scales": [],
+      "zeroPoints": []
+    },
+    {
+      "index": 168,
+      "name": "TFLite_Detection_PostProcess:1",
+      "shape": [],
+      "type": 0,
+      "scales": [],
+      "zeroPoints": []
+    },
+    {
+      "index": 169,
+      "name": "TFLite_Detection_PostProcess:2",
+      "shape": [],
+      "type": 0,
+      "scales": [],
+      "zeroPoints": []
+    },
+    {
+      "index": 170,
+      "name": "TFLite_Detection_PostProcess:3",
+      "shape": [],
+      "type": 0,
+      "scales": [],
+      "zeroPoints": []
+    }
+  ],
+  "operators": [
+    {
+      "builtin": 3,
+      "custom": null,
+      "version": 1,
+      "count": 34
+    },
+    {
+      "builtin": 2,
+      "custom": null,
+      "version": 1,
+      "count": 2
+    },
+    {
+      "builtin": 4,
+      "custom": null,
+      "version": 1,
+      "count": 13
+    },
+    {
+      "builtin": 14,
+      "custom": null,
+      "version": 1,
+      "count": 1
+    },
+    {
+      "builtin": 22,
+      "custom": null,
+      "version": 1,
+      "count": 13
+    },
+    {
+      "builtin": 32,
+      "custom": "TFLite_Detection_PostProcess",
+      "version": 1,
+      "count": 1
+    }
+  ],
+  "tensorTypes": {
+    "3": 112,
+    "2": 60,
+    "0": 4
+  },
+  "metadataEntries": 0
+}

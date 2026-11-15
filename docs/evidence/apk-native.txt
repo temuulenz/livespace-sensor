@@ -1,0 +1,3 @@
+lib/armeabi-v7a/libtensorflowlite_jni.so: 2265808 bytes, sha256=b34b0fe7d20ef29adacf68886ef6bb402cd0aff905feefe56fe1083ec0c7aefe
+Model compression method: 0
+APK: 7906731 bytes, sha256=48853d42f13447e566312af082d405db7d54300f155ddb5c09a1e40270989168

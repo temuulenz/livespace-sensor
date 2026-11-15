@@ -1,0 +1,7 @@
+Controlled capture rejection: RECORD_AUDIO: deny; time=+1m33s997ms ago
+AppOps denied: 3 successful AI inferences; microphone=⚠ Microphone error: IllegalStateException: No supported mono PCM16 capture: 16000/6: Uninitialized recorder, 16000/1: Uninitialized recorder, 44100/6: Uninitialized recorder, 44100/1: Uninitialized recorder, 48000/6: Uninitialized recorder, 48000/1: Uninitialized recorder, 8000/6: Uninitialized recorder, 8000/1: Uninitialized recorder; noiseRms=None
+Denied-session Home camera release: True
+Restored capture: AI and microphone both running, 16000 Hz, dBFS=-66.36
+Real one-second noise windows retained as aggregate evidence: 8 (no PCM)
+Simultaneous-session Home camera release: True
+Audio owner release marker present: True

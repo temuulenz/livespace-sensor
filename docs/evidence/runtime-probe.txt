@@ -1,0 +1,9 @@
+11-15 23:16:31.045 18514 18544 I RuntimeProbe: INIT_OK ms=22.871333 abi=armeabi-v7a, armeabi
+11-15 23:16:31.045 18514 18544 I RuntimeProbe: input[0] name=normalized_input_image_tensor shape=1, 300, 300, 3 type=UINT8 scale=0.0078125 zero=128
+11-15 23:16:31.045 18514 18544 I RuntimeProbe: output[0] name=TFLite_Detection_PostProcess shape=1, 10, 4 type=FLOAT32 scale=0.0 zero=0
+11-15 23:16:31.045 18514 18544 I RuntimeProbe: output[1] name=TFLite_Detection_PostProcess:1 shape=1, 10 type=FLOAT32 scale=0.0 zero=0
+11-15 23:16:31.045 18514 18544 I RuntimeProbe: output[2] name=TFLite_Detection_PostProcess:2 shape=1, 10 type=FLOAT32 scale=0.0 zero=0
+11-15 23:16:31.045 18514 18544 I RuntimeProbe: output[3] name=TFLite_Detection_PostProcess:3 shape=1 type=FLOAT32 scale=0.0 zero=0
+11-15 23:16:31.210 18514 18544 I RuntimeProbe: INVOKE_OK synthetic neutral input; not a camera observation
+11-15 23:16:31.210 18514 18544 I RuntimeProbe: CLOSE_OK
+--------- beginning of system

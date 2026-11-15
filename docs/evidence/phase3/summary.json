@@ -1,0 +1,122 @@
+[
+  {
+    "file": "ai-audio-final.jsonl",
+    "run": "f0685d3c4f1e476d8f9c2a946718600a",
+    "samples": 30,
+    "microphoneEnabled": true,
+    "failed": 0,
+    "preMs": {
+      "median": 146.2924795,
+      "p95": 157.304292
+    },
+    "inferenceMs": {
+      "median": 169.24925000000002,
+      "p95": 194.526625
+    },
+    "postMs": {
+      "median": 0.070333,
+      "p95": 0.559375
+    },
+    "totalMs": {
+      "median": 317.502854,
+      "p95": 341.1145
+    },
+    "temperatureC": [
+      32.7,
+      33
+    ],
+    "debugPssMiB": [
+      26.4326171875,
+      44.8623046875
+    ],
+    "validAudioSamples": 30,
+    "noiseDbfsRange": [
+      -73.13705937864056,
+      -59.538720603962346
+    ],
+    "noiseRmsRange": [
+      0.00022036723934725698,
+      0.001054542214709589
+    ],
+    "positivePersonSamples": 0,
+    "actualInferenceHz": 0.3312771304546493
+  },
+  {
+    "file": "ai-audio-off.jsonl",
+    "run": "91c0b70f04d14031a2e80c2c5ddda37b",
+    "samples": 30,
+    "microphoneEnabled": false,
+    "failed": 0,
+    "preMs": {
+      "median": 147.2467085,
+      "p95": 158.833917
+    },
+    "inferenceMs": {
+      "median": 145.61347949999998,
+      "p95": 211.96675
+    },
+    "postMs": {
+      "median": 0.0658335,
+      "p95": 0.684125
+    },
+    "totalMs": {
+      "median": 297.65141700000004,
+      "p95": 354.838375
+    },
+    "temperatureC": [
+      32,
+      32.4
+    ],
+    "debugPssMiB": [
+      26.0283203125,
+      44.3037109375
+    ],
+    "validAudioSamples": 0,
+    "noiseDbfsRange": null,
+    "noiseRmsRange": null,
+    "positivePersonSamples": 0,
+    "actualInferenceHz": 0.33136040585936605
+  },
+  {
+    "file": "ai-audio-on.jsonl",
+    "run": "71c12fd6fa8d4b1d8e15c9c143c6d8eb",
+    "samples": 30,
+    "microphoneEnabled": true,
+    "failed": 0,
+    "preMs": {
+      "median": 149.30902099999997,
+      "p95": 158.931708
+    },
+    "inferenceMs": {
+      "median": 153.8263755,
+      "p95": 197.333542
+    },
+    "postMs": {
+      "median": 0.0661455,
+      "p95": 0.722458
+    },
+    "totalMs": {
+      "median": 304.88210449999997,
+      "p95": 352.414375
+    },
+    "temperatureC": [
+      31.6,
+      32
+    ],
+    "debugPssMiB": [
+      26.486328125,
+      45.107421875
+    ],
+    "validAudioSamples": 30,
+    "noiseDbfsRange": [
+      -74.66722217731801,
+      -68.58459501213562
+    ],
+    "noiseRmsRange": [
+      0.0001847731620993297,
+      0.0003721947555741608
+    ],
+    "positivePersonSamples": 0,
+    "actualInferenceHz": 0.33151950249211215
+  }
+]

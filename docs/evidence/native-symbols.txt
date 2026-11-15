@@ -1,0 +1,7 @@
+TFLite 2.14.0
+     7: 00000000     0 FUNC    GLOBAL DEFAULT  UND __aeabi_memcpy4@LIBC_N (4)
+TFLite 2.8.0
+    51: 00000000     0 FUNC    GLOBAL DEFAULT  UND __aeabi_memcpy4
+Device libc
+   142: 00017533     4 FUNC    WEAK   DEFAULT   14 __aeabi_memcpy4@@LIBC_PRIVATE
+  7033: 00017533     4 FUNC    WEAK   DEFAULT   14 __aeabi_memcpy4

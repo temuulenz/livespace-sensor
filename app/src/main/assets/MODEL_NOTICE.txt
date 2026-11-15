@@ -1,0 +1,7 @@
+SSD MobileNet V1 quantized COCO model — TensorFlow Authors.
+Source: https://storage.googleapis.com/download.tensorflow.org/models/tflite/coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip
+License: Apache License 2.0; see TENSORFLOW_LICENSE.txt.
+Publisher model/license listing: https://www.kaggle.com/models/tensorflow/ssd-mobilenet-v1/tfLite
+Official artifact reference: https://github.com/tensorflow/examples/blob/master/lite/examples/object_detection/ios/README.md
+Model and labels copied without modification (labelmap.txt renamed labels.txt).
+TensorFlow Lite runtime: org.tensorflow:tensorflow-lite:2.8.0, Apache 2.0.

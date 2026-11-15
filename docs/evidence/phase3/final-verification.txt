@@ -1,0 +1,10 @@
+Final APK install: Success
+Build/lint/test: SUCCESS; 21 passed; 0 lint errors / 56 warnings
+Final 30-sample run: all audio enabled, 16000 Hz, finite RMS/dBFS, uncalibrated and estimatedDbSpl=null
+Model and ARMv7 runtime hashes unchanged; APK hash matches build-artifact.json
+Three Start/Stop cycles and Home/return passed; see lifecycle-checks.txt
+Controlled AppOps rejection and restoration passed; original RECORD_AUDIO allow mode restored
+Final current error filter empty; intentional earlier rejection error documented
+Final battery: 36%, 33.4 C, USB powered / charging flag
+Final normal app launch: sensing stopped, Active Camera Clients []
+No raw audio/images saved, no network transport, no commit/push

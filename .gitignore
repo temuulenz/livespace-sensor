@@ -1,0 +1,46 @@
+# Android Studio / IntelliJ
+*.iml
+.idea/
+.gradle/
+local.properties
+
+# Build outputs
+**/build/
+*.apk
+*.aab
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# Signing keys
+*.jks
+*.keystore
+keystore.properties
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+secrets.properties
+*.token
+admin.json
+credentials.json
+.artifacts/
+
+# Local databases
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Host verification tools
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

@@ -1,0 +1,7 @@
+Cycle 1: simultaneous AI/audio valid; sample rate 16000, dBFS -66.16
+Cycle 1: explicit Stop released camera and microphone; no later inference result
+Cycle 2: simultaneous AI/audio valid; sample rate 16000, dBFS -69.82
+Cycle 2: explicit Stop released camera and microphone; no later inference result
+Cycle 3: simultaneous AI/audio valid; sample rate 16000, dBFS -66.18
+Cycle 3: explicit Stop released camera and microphone; no later inference result
+Home/return: camera remains released and final audio owner marker is RELEASED

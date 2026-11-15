@@ -1,0 +1,16 @@
+Phase 2 final Android verification command:
+./gradlew assembleDebug lintDebug testDebugUnitTest
+Result: BUILD SUCCESSFUL
+Lint: 0 errors, 54 warnings
+JUnit: 8 tests, 0 failures, 0 errors, 0 skipped
+
+Retained toolchain: Gradle 9.6.0 / AGP 9.5.1 / JBR 25.0.4
+minSdk 23; compile/target SDK 37; ARMv7 only; Kotlin + XML.
+TFLite runtime 2.8.0; CPU built-in kernels, NNAPI=false, XNNPACK=false.
+
+Warnings include pinned older dependency/tool updates, unused template assets,
+English UI strings, UI suggestions, ChromeOS ABI support and unbundled
+x86_64 AAR native 16 KB alignment. No API 23 NewApi error was reported.
+AGP shared runtime/API namespace compatibility warning retained intentionally;
+see gradle.properties and MODEL_PROFILE.md. Native library could not be stripped
+by this host toolchain and was packaged unchanged (hash verified against AAR).

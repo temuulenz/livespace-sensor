@@ -1,0 +1,13 @@
+--------- beginning of system
+--------- beginning of main
+RELEASED
+Capture failed
+java.lang.IllegalStateException: No supported mono PCM16 capture: 16000/6: Uninitialized recorder, 16000/1: Uninitialized recorder, 44100/6: Uninitialized recorder, 44100/1: Uninitialized recorder, 48000/6: Uninitialized recorder, 48000/1: Uninitialized recorder, 8000/6: Uninitialized recorder, 8000/1: Uninitialized recorder
+	at com.livespace.sensor.audio.AudioMonitor.open(AudioMonitor.kt:45)
+	at com.livespace.sensor.audio.AudioMonitor.capture(AudioMonitor.kt:53)
+	at com.livespace.sensor.audio.AudioMonitor.start$lambda$0(AudioMonitor.kt:19)
+	at com.livespace.sensor.audio.AudioMonitor$$ExternalSyntheticLambda1.run(D8$$SyntheticClass:0)
+	at java.lang.Thread.run(Thread.java:818)
+RELEASED
+START rate=16000 bufferBytes=16000 source=VOICE_RECOGNITION
+RELEASED

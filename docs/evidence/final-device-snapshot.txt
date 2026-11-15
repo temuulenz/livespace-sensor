@@ -1,0 +1,16 @@
+Final checks on Samsung SM-N910U, API 23, 2026-11-15:
+- OS Camera permission: granted=true, flags=0x0.
+- Isolated automated denial attempt did not find a stable Deny control; outcome
+  not verified. Permission remained granted and inference was running at follow-up.
+- adb dumpsys meminfo while app was running, PID 26434:
+  TOTAL PSS 92060 kB (~89.9 MiB), TOTAL SWAP 5844 kB.
+  EGL mtrack / graphics 53148 kB (~51.9 MiB).
+  Heap Size 39386 kB, Heap Alloc 29651 kB, Heap Free 9734 kB.
+  This is a separate snapshot, not the benchmark sample range or a peak claim.
+- Battery: USB powered=true, status=2 (charging), 26%, 35.7 C.
+  Battery temperature is not CPU temperature.
+- Filtered current AndroidRuntime:E / LiveSpaceDetection:E / LiveSpaceCamera:E
+  logcat contained no application error entries at final inspection.
+- am force-stop then normal am start succeeded; no benchmark auto-start extras.
+- Subsequent dumpsys media.camera header: Active Camera Clients: [].
+  Installed app intentionally left launched with sensing stopped.

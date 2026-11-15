@@ -1,0 +1,206 @@
+[
+  {
+    "run": "db46b3738e5a4fa1bf3e4b23e330d7bf",
+    "threads": 1,
+    "intervalMs": 3000,
+    "samples": 30,
+    "initMs": 17.893792,
+    "failed": 0,
+    "preMs": {
+      "median": 148.0778965,
+      "p95": 155.756291
+    },
+    "inferenceMs": {
+      "median": 242.2114795,
+      "p95": 251.26975
+    },
+    "postMs": {
+      "median": 0.063083,
+      "p95": 0.563625
+    },
+    "totalMs": {
+      "median": 389.59583299999997,
+      "p95": 402.499291
+    },
+    "pssMiB": {
+      "min": 26.3603515625,
+      "max": 44.6591796875
+    },
+    "batteryC": {
+      "min": 32.7,
+      "max": 32.9
+    },
+    "actualHz": 0.3312695620387928,
+    "positivePersonSamples": 0
+  },
+  {
+    "run": "f5a9d85972554dd69bc4f8d445f3ccb6",
+    "threads": 2,
+    "intervalMs": 3000,
+    "samples": 30,
+    "initMs": 24.419292,
+    "failed": 0,
+    "preMs": {
+      "median": 150.44941699999998,
+      "p95": 155.393291
+    },
+    "inferenceMs": {
+      "median": 143.40885400000002,
+      "p95": 193.595959
+    },
+    "postMs": {
+      "median": 0.063854,
+      "p95": 0.632709
+    },
+    "totalMs": {
+      "median": 291.1389165,
+      "p95": 349.229375
+    },
+    "pssMiB": {
+      "min": 26.29296875,
+      "max": 44.751953125
+    },
+    "batteryC": {
+      "min": 33,
+      "max": 33.3
+    },
+    "actualHz": 0.33071422869459116,
+    "positivePersonSamples": 0
+  },
+  {
+    "run": "af445ed0a03040b2b21cb63b9bae3464",
+    "threads": 4,
+    "intervalMs": 3000,
+    "samples": 30,
+    "initMs": 15.870459,
+    "failed": 0,
+    "preMs": {
+      "median": 151.046667,
+      "p95": 160.2295
+    },
+    "inferenceMs": {
+      "median": 135.571771,
+      "p95": 163.497917
+    },
+    "postMs": {
+      "median": 0.0705625,
+      "p95": 0.560334
+    },
+    "totalMs": {
+      "median": 280.97760400000004,
+      "p95": 306.248875
+    },
+    "pssMiB": {
+      "min": 26.3212890625,
+      "max": 44.6005859375
+    },
+    "batteryC": {
+      "min": 33.3,
+      "max": 33.7
+    },
+    "actualHz": 0.3312544262444886,
+    "positivePersonSamples": 0
+  },
+  {
+    "run": "e1db638dcbfd425d94c25505b0a31ece",
+    "threads": 2,
+    "intervalMs": 2000,
+    "samples": 30,
+    "initMs": 16.318209,
+    "failed": 0,
+    "preMs": {
+      "median": 148.205521,
+      "p95": 158.360958
+    },
+    "inferenceMs": {
+      "median": 165.3648955,
+      "p95": 198.319125
+    },
+    "postMs": {
+      "median": 0.09085399999999999,
+      "p95": 0.55325
+    },
+    "totalMs": {
+      "median": 316.433771,
+      "p95": 349.031542
+    },
+    "pssMiB": {
+      "min": 26.32421875,
+      "max": 45.7080078125
+    },
+    "batteryC": {
+      "min": 33.7,
+      "max": 34.3
+    },
+    "actualHz": 0.49435750571068154,
+    "positivePersonSamples": 15
+  },
+  {
+    "run": "fb260136d997437ca1b2b0a73a50a369",
+    "threads": 2,
+    "intervalMs": 5000,
+    "samples": 30,
+    "initMs": 27.813167,
+    "failed": 0,
+    "preMs": {
+      "median": 147.6532915,
+      "p95": 157.309167
+    },
+    "inferenceMs": {
+      "median": 177.52389549999998,
+      "p95": 194.984459
+    },
+    "postMs": {
+      "median": 0.069313,
+      "p95": 0.593875
+    },
+    "totalMs": {
+      "median": 328.1076875,
+      "p95": 348.257833
+    },
+    "pssMiB": {
+      "min": 26.560546875,
+      "max": 44.435546875
+    },
+    "batteryC": {
+      "min": 34.7,
+      "max": 35
+    },
+    "actualHz": 0.19921002919457326,
+    "positivePersonSamples": 0
+  },
+  {
+    "run": "627edbced632444d9c67f3cfd8f65dd8",
+    "threads": 2,
+    "intervalMs": 3000,
+    "samples": 30,
+    "initMs": 13.38675,
+    "failed": 0,
+    "preMs": {
+      "median": 148.083271,
+      "p95": 156.429708
+    },
+    "inferenceMs": {
+      "median": 146.3349585,
+      "p95": 196.977458
+    },
+    "postMs": {
+      "median": 0.07097899999999999,
+      "p95": 0.573834
+    },
+    "totalMs": {
+      "median": 295.366875,
+      "p95": 351.5155
+    },
+    "pssMiB": {
+      "min": 26.3232421875,
+      "max": 44.7021484375
+    },
+    "batteryC": {
+      "min": 34.8,
+      "max": 35
+    },
+    "actualHz": 0.3310502283105023,
+    "positivePersonSamples": 0
+  }
+]

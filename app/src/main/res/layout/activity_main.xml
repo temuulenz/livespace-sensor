@@ -1,0 +1,23 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="LiveSpace Sensor" android:textSize="28sp" android:textStyle="bold" android:textColor="#55DBC1"/>
+<TextView android:id="@+id/identity" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingBottom="12dp" android:textSize="15sp"/>
+<FrameLayout android:layout_width="match_parent" android:layout_height="260dp" android:background="#000000">
+<TextureView android:id="@+id/preview" android:layout_width="match_parent" android:layout_height="match_parent" android:contentDescription="Local rear camera preview"/>
+<com.livespace.sensor.ui.DetectionOverlayView android:id="@+id/overlay" android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no"/>
+</FrameLayout>
+<TextView android:id="@+id/status" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="12dp" android:text="○ Stopped" android:textSize="18sp" android:accessibilityLiveRegion="polite"/>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+<Button android:id="@+id/start" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Start sensor"/>
+<Button android:id="@+id/stop" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Stop"/>
+</LinearLayout>
+<TextView android:id="@+id/metrics" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="12dp" android:paddingBottom="12dp" android:textSize="17sp"/>
+<com.livespace.sensor.ui.NoiseHistoryView android:id="@+id/noiseHistory" android:layout_width="match_parent" android:layout_height="110dp" android:contentDescription="Recent noise history in dBFS"/>
+<TextView android:id="@+id/networkStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="8dp" android:textSize="14sp"/>
+<Button android:id="@+id/connect" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Connect / test WebSocket"/>
+<Button android:id="@+id/disconnect" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Disconnect WebSocket"/>
+<Button android:id="@+id/networkSettings" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Server and credentials"/>
+<Button android:id="@+id/settings" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Settings"/>
+<Button android:id="@+id/diagnostics" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Diagnostics"/>
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Local person detection • Observed people ≠ total cafe occupancy. No recordings or transmissions. Camera and microphone stop when this screen leaves the foreground." android:textSize="13sp" android:paddingTop="8dp"/>
+</LinearLayout></ScrollView>

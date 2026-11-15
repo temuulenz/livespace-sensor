@@ -1,0 +1,13 @@
+Cycle 1: model ready, real inference visible
+Cycle 1: explicit Stop and camera-client release passed
+Cycle 2: model ready, real inference visible
+Cycle 2: explicit Stop and camera-client release passed
+Cycle 3: model ready, real inference visible
+Cycle 3: explicit Stop and camera-client release passed
+Home/return: stopped, model closed, camera released
+Landscape rotation: fresh model/camera initialized and 3 camera inferences succeeded; visual box alignment not verified
+First combined permission-denial assertion did not pass; later OS state was granted=true and capture running.
+Isolated permission test could not find a stable permission_deny_button; OS state again granted=true at final follow-up.
+Permission denial/permanent denial remain unverified manual checks; no denial-pass claim is made.
+Final filtered AndroidRuntime/LiveSpaceDetection/LiveSpaceCamera errors: no entries at inspection.
+Final normal launch succeeded; camera client list empty, sensing stopped.

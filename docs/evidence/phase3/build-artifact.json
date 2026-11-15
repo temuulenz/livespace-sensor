@@ -1,0 +1,31 @@
+{
+  "apkBytes": 7552753,
+  "apkSha256": "ef5470122461195e1e2cf2292efc77d55db251bf7e5f087277cc31f18819c3ea",
+  "modelSha256": "e4b118e5e4531945de2e659742c7c590f7536f8d0ed26d135abcfe83b4779d13",
+  "nativeLibraries": {
+    "lib/armeabi-v7a/libtensorflowlite_jni.so": "b34b0fe7d20ef29adacf68886ef6bb402cd0aff905feefe56fe1083ec0c7aefe"
+  },
+  "tests": [
+    {
+      "name": "com.livespace.sensor.detection.DetectionMathTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.livespace.sensor.audio.NoiseMathTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.livespace.sensor.model.TelemetryStoreTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ]
+}

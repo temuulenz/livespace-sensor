@@ -1,0 +1,66 @@
+[
+  {
+    "displayDegrees": 0,
+    "samples": 3,
+    "failed": 0,
+    "inferenceMedianMs": 141.897208,
+    "batteryTemperatureC": [
+      29.8,
+      29.8,
+      29.8
+    ],
+    "microphoneEnabled": true,
+    "visualVerified": false,
+    "runs": [
+      "cec75fb0cb8442f2b338b614070c98fe"
+    ]
+  },
+  {
+    "displayDegrees": 90,
+    "samples": 3,
+    "failed": 0,
+    "inferenceMedianMs": 144.997083,
+    "batteryTemperatureC": [
+      29.8,
+      29.8,
+      29.8
+    ],
+    "microphoneEnabled": true,
+    "visualVerified": false,
+    "runs": [
+      "e30f1e7877b34f98a87db698794b1053"
+    ]
+  },
+  {
+    "displayDegrees": 180,
+    "samples": 3,
+    "failed": 0,
+    "inferenceMedianMs": 175.03725,
+    "batteryTemperatureC": [
+      29.9,
+      29.8,
+      29.8
+    ],
+    "microphoneEnabled": true,
+    "visualVerified": false,
+    "runs": [
+      "c1c286d1213848528f01d17b3ce58e01"
+    ]
+  },
+  {
+    "displayDegrees": 270,
+    "samples": 3,
+    "failed": 0,
+    "inferenceMedianMs": 114.598667,
+    "batteryTemperatureC": [
+      30,
+      30,
+      30
+    ],
+    "microphoneEnabled": true,
+    "visualVerified": false,
+    "runs": [
+      "6f204ea9a412454686ac70db19a9287f"
+    ]
+  }
+]

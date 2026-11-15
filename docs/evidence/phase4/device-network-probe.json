@@ -1,0 +1,16 @@
+{
+  "authorizationCorrect": true,
+  "pathCorrect": true,
+  "rootFieldsExact": true,
+  "schemaVersionNumeric": true,
+  "deviceLocationCorrect": true,
+  "telemetryTypeCorrect": true,
+  "messageIdIsUuid": true,
+  "timestampUtc": true,
+  "nestedFieldsExact": true,
+  "rawMediaAbsent": true,
+  "telemetryReceived": true,
+  "keystoreRoundtrip": true,
+  "deviceAcknowledged": true,
+  "testTokenRedacted": true
+}

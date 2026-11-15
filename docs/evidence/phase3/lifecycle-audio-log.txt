@@ -1,0 +1,12 @@
+--------- beginning of system
+--------- beginning of main
+START rate=16000 bufferBytes=16000 source=VOICE_RECOGNITION
+RELEASED
+START rate=16000 bufferBytes=16000 source=VOICE_RECOGNITION
+RELEASED
+START rate=16000 bufferBytes=16000 source=VOICE_RECOGNITION
+RELEASED
+START rate=16000 bufferBytes=16000 source=VOICE_RECOGNITION
+RELEASED
+START rate=16000 bufferBytes=16000 source=VOICE_RECOGNITION
+RELEASED
